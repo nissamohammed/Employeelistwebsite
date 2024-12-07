@@ -1,0 +1,35 @@
+.footer-section {
+    background: #f3f6f9;
+    position: relative;
+  }
+
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+
+  .social-icons a {
+    transition: transform 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    transform: scale(1.2);
+  }
+  .custom-shape-divider-top-1733499056 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1733499056 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top-1733499056 .shape-fill {
+    fill:  #33d6ef;
+}

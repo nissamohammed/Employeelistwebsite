@@ -68,44 +68,100 @@ const handleLogin = async()=>{
 }
   return (
     <>
-   <div className=' container-fluid d-flex justifycontent-center align-items-center flex-column'
-        style={{ height: '100vh' }}>
-        <div className="container w-75 p-5" style={{textDecoration:'none'}}>
-          <Link to={'/'} className='text-warning ' style={{textDecoration:'none'}}>
-            <FontAwesomeIcon icon={faArrowLeft} className='me-3' />Back Home</Link>
+  <div
+  className="container-fluid d-flex justify-content-center align-items-center flex-column"
+  style={{
+    height: "100vh",
+    background: "linear-gradient(135deg, #1d3557, #457b9d)",
+  }}
+>
+  <div className="container p-5 rounded shadow-lg" style={{ maxWidth: "450px", background: "#f1faee" }}>
+    {/* Back Home Link */}
+    <Link
+      to="/"
+      className="text-dark d-flex align-items-center mb-4"
+      style={{ textDecoration: "none", fontWeight: "500" }}
+    >
+      <FontAwesomeIcon icon={faArrowLeft} className="me-2" />
+      Back Home
+    </Link>
 
-          <div className=" bg-primary p-3 mt-3 rounded-5">
-            <Row>
-              <Col sm={12} md={6} className='p-5 d-flex justify-content-center align-items-center'>
-                <img src={img2} alt="no image" className='w-100' />
-              </Col>
-              <Col sm={12} md={6} className='d-flex justify-content-center align-items-center text-light flex-column'>
-                <h3><FontAwesomeIcon icon={faStackOverflow} className='fa-2x me-3' />Employee List</h3>
-           
-              <h5>Sign In to your Account</h5>
+    {/* Logo and Heading */}
+    <div className="text-center mb-4">
+      <img
+        src={img2}
+        alt="no image"
+        className="rounded-circle"
+        style={{
+          width: "120px",
+          height: "120px",
+          objectFit: "cover",
+          border: "4px solid #457b9d",
+        }}
+      />
+      <h3 className="mt-3 text-dark">
+        <FontAwesomeIcon icon={faStackOverflow} className="fa-lg me-2 text-warning" />
+        Employee List
+      </h3>
+      <p className="text-muted">Sign in to manage your account</p>
+    </div>
 
-              <form  className='mt-4 w-75'>
-                <div className='mb-3'>
-                      <input type="text" placeholder='Username' className='form-control' required minLength={'3'}
-                      onChange={(e)=>setuserdetails({...userdetails,username:e.target.value})}/>
-                </div>
-                <div className='mb-3'>
-                <input type="text" placeholder='Password' className='form-control'
-                onChange={(e)=>setuserdetails({...userdetails,password:e.target.value})}/>
-                </div>
-                <div className='mb-3'>
-                
-                <div>
-                <button type='button' className='btn btn-warning w-100 mt-3' onClick={handleLogin} >Login</button>
-                
-                </div>
-                </div>
-              </form>
-              </Col>
-            </Row>
-          </div>
-        </div>
-      </div> 
+    {/* Form */}
+    <form className="mt-3">
+      <div className="form-floating mb-3">
+        <input
+          type="text"
+          id="username"
+          className="form-control"
+          placeholder="Username"
+          required
+          minLength="3"
+          onChange={(e) =>
+            setuserdetails({ ...userdetails, username: e.target.value })
+          }
+          style={{ border: "1px solid #a8dadc" }}
+        />
+        <label htmlFor="username" style={{ color: "#457b9d" }}>Username</label>
+      </div>
+      <div className="form-floating mb-4">
+        <input
+          type="password"
+          id="password"
+          className="form-control"
+          placeholder="Password"
+          onChange={(e) =>
+            setuserdetails({ ...userdetails, password: e.target.value })
+          }
+          style={{ border: "1px solid #a8dadc" }}
+        />
+        <label htmlFor="password" style={{ color: "#457b9d" }}>Password</label>
+      </div>
+
+      <button
+        type="button"
+        className="btn btn-warning w-100 py-2"
+        style={{
+          fontWeight: "bold",
+          background: "linear-gradient(90deg, #e63946, #ffaf42)",
+          border: "none",
+        }}
+        onClick={handleLogin}
+      >
+        Login
+      </button>
+    </form>
+
+    {/* Footer */}
+    <div className="text-center mt-4">
+      <small className="text-muted">
+        Don’t have an account?{" "}
+        <Link to="/register" style={{ color: "#1d3557", textDecoration: "underline" }}>
+          Register
+        </Link>
+      </small>
+    </div>
+  </div>
+</div>
     </>
   )
 }

@@ -1,0 +1,247 @@
+.custom-shape-divider-bottom-1733494843 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1733494843 svg {
+    position: relative;
+    display: block;
+    width: calc(101% + 1.3px);
+    height: 200px;
+}
+
+.custom-shape-divider-bottom-1733494843 .shape-fill {
+    fill: #FFFFFF;
+}
+.container-fluid{
+background: linear-gradient(135deg, #0ff8f0cf, #0215e7);
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Animations for Elements */
+  .animate-heading {
+    animation: fadeInUp 1.2s ease-in-out forwards;
+  }
+
+  .animate-text {
+    animation: fadeInUp 1.5s ease-in-out forwards;
+  }
+
+  .animate-button {
+    animation: fadeInUp 1.8s ease-in-out forwards;
+  }
+
+  .animate-image {
+    animation: fadeInRight 2s ease-in-out forwards;
+  }
+
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .custom-shape-divider-bottom-1733494843 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .custom-shape-divider-bottom-1733494843 svg {
+    position: relative;
+    display: block;
+    width: calc(101% + 1.3px);
+    height: 200px;
+  }
+
+  .custom-shape-divider-bottom-1733494843 .shape-fill {
+    fill: #ffffff;
+  }
+  /* Features Section Styling */
+  .features-section {
+    background: linear-gradient(135deg, #0215e7, #0ff8f0cf);
+    position: relative;
+  }
+
+  .feature-card {
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-heading {
+    animation: fadeInUp 1s ease-in-out forwards;
+  }
+
+  .animate-text {
+    animation: fadeInUp 1.2s ease-in-out forwards;
+  }
+
+  .animate-feature {
+    animation: fadeInUp 1.5s ease-in-out forwards;
+  }
+  .testimonials-section {
+    background-color: #f9f9f9;
+    position: relative;
+  }
+
+  .carousel-item blockquote {
+    font-style: italic;
+  }
+
+  .carousel-item img {
+    transition: transform 0.3s ease;
+  }
+
+  .carousel-item img:hover {
+    transform: scale(1.1);
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+  }
+
+  .animate-heading {
+    animation: fadeInUp 1s ease-in-out forwards;
+  }
+
+  .animate-text {
+    animation: fadeInUp 1.2s ease-in-out forwards;
+  }
+  .custom-shape-divider-top-1733497551 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1733497551 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top-1733497551 .shape-fill {
+    fill: #FFFFFF;
+}
+.join-team-section {
+    background: linear-gradient(135deg, #0215e7, #0ff8f0cf);
+    position: relative;
+  }
+
+  form input,
+  form textarea {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  form input:focus,
+  form textarea:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+  }
+
+  .btn-primary {
+    background-color: #0215e7;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #0ff8f0cf;
+    transform: scale(1.05);
+  }
+
+  .animate-heading {
+    animation: fadeInUp 1s ease-in-out forwards;
+  }
+
+  .animate-text {
+    animation: fadeInUp 1.2s ease-in-out forwards;
+  }
+
+  .animate-button {
+    animation: fadeInUp 1.5s ease-in-out forwards;
+  }
+  .projects-section {
+    background-color: #f9f9f9;
+    position: relative;
+  }
+
+  .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .project-img {
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover .project-img {
+    transform: scale(1.05);
+  }
+
+  .animate-heading {
+    animation: fadeInUp 1s ease-in-out forwards;
+  }
+
+  .animate-text {
+    animation: fadeInUp 1.2s ease-in-out forwards;
+  }
