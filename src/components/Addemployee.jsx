@@ -129,87 +129,164 @@ if(key==0){
         <FontAwesomeIcon icon={faPlus} className='me-2' />Create Employee
       </button>
 
-      <Modal show={show} onHide={handleClose} size='lg'>
-        <Modal.Header closeButton>
-          <Modal.Title>Add Employee Details</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+      <Modal show={show} onHide={handleClose} size="lg" centered>
+  <Modal.Header closeButton>
+    <Modal.Title className="text-center w-100">Add Employee Details</Modal.Title>
+  </Modal.Header>
+  <Modal.Body>
+    <form>
+      <Row>
+        {/* Image Upload Section */}
+        <Col sm={12} md={5} className="d-flex flex-column align-items-center">
+          <label htmlFor="proimg" className="w-100 text-center mb-3">
+            <input
+              id="proimg"
+              type="file"
+              style={{ display: "none" }}
+              key={key}
+              onChange={handleFile}
+            />
+            <img
+              src={
+                preview
+                  ? preview
+                  : "https://upload.wikimedia.org/wikipedia/commons/a/ac/Image_Icon.png"
+              }
+              alt="no image"
+              width="100%"
+              className="rounded shadow-sm"
+            />
+            <small className="text-muted d-block mt-2">
+              Click on the image to upload
+            </small>
+          </label>
+        </Col>
+
+        {/* Form Section */}
+        <Col sm={12} md={7}>
+          <div className="mb-3">
+            <label htmlFor="name" className="form-label">
+              Name:
+            </label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter Name"
+              value={employeedetails.name}
+              className="form-control"
+              onChange={handleChange}
+              name="name"
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label">
+              Email:
+            </label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter Email"
+              value={employeedetails.email}
+              className="form-control"
+              onChange={handleChange}
+              name="email"
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="mobile" className="form-label">
+              Mobile No:
+            </label>
+            <input
+              type="text"
+              id="mobile"
+              placeholder="Enter Mobile Number"
+              value={employeedetails.mobile}
+              className="form-control"
+              onChange={handleChange}
+              name="mobile"
+            />
+          </div>
+
           <Row>
             <Col sm={12} md={6}>
-              <label htmlFor="proimg">
-                <input id='proimg' type="file" style={{ display: 'none' }} key={key} onChange={handleFile} />
-                <img src={preview ? preview : "https://upload.wikimedia.org/wikipedia/commons/a/ac/Image_Icon.png"} alt="no image" width={'100%'} />
-              </label>
+              <div className="mb-3">
+                <label htmlFor="designation" className="form-label">
+                  Designation:
+                </label>
+                <select
+                  id="designation"
+                  name="designation"
+                  value={employeedetails.designation}
+                  onChange={handleChange}
+                  className="form-select"
+                >
+                  <option value="">-- Select Designation --</option>
+                  <option value="HR">HR</option>
+                  <option value="Manager">Manager</option>
+                  <option value="Sales">Sales</option>
+                </select>
+              </div>
             </Col>
             <Col sm={12} md={6}>
-              <form className='p-3'>
-                <div className="mb-3">
-                  <input type="text" placeholder='Name' value={employeedetails.name} className='form-control' onChange={handleChange} name="name" />
+              <div className="mb-3">
+                <label className="form-label">Gender:</label>
+                <div className="d-flex gap-3">
+                  <label className="form-check-label">
+                    <input
+                      type="radio"
+                      name="gender"
+                      value="male"
+                      checked={employeedetails.gender === "male"}
+                      onChange={handleChange}
+                      className="form-check-input"
+                    />
+                    Male
+                  </label>
+                  <label className="form-check-label">
+                    <input
+                      type="radio"
+                      name="gender"
+                      value="female"
+                      checked={employeedetails.gender === "female"}
+                      onChange={handleChange}
+                      className="form-check-input"
+                    />
+                    Female
+                  </label>
                 </div>
-                <div className="mb-3">
-                  <input type="text" placeholder='Email' value={employeedetails.email} className='form-control' onChange={handleChange} name="email" />
-                </div>
-                <div className="mb-3">
-                  <input type="text" placeholder='Mobile No' value={employeedetails.mobile} className='form-control' onChange={handleChange} name="mobile" />
-                </div>
-
-                <div className="mb-3">
-                 <label>Designation :</label>
-                  <select name="designation" value={employeedetails.designation} onChange={handleChange} className='ms-3'>
-                    <option value="">-- Designation --</option>
-                    <option value="HR">HR</option>
-                    <option value="Manager">Manager</option>
-                    <option value="Sales">Sales</option>
-                  </select>
-                </div>
-
-                <div className="mb-3">
-                  <label>Gender :</label>
-                  <div className="radio-group">
-                    <label>
-                      <input type="radio" name="gender" value="male" checked={employeedetails.gender === 'male'} onChange={handleChange} />
-                      Male
-                    </label>
-                    <label>
-                      <input type="radio" name="gender" value="female" checked={employeedetails.gender === 'female'} onChange={handleChange} />
-                      Female
-                    </label>
-                  </div>
-                </div>
-
-                <div className='mb-3'>
-                  <label>Course:</label>
-                <div >
-                  <input type="text" placeholder='course' value={employeedetails.course} className='form-control' onChange={handleChange} name="course" />
-                </div>
-                  {/*<div>
-                    <input type="checkbox" id="mca" name="mca" checked={employeedetails.course.mca} onChange={handleChange} />
-                    <label htmlFor="mca">MCA</label>
-                  </div>
-
-                  <div>
-                    <input type="checkbox" id="bca" name="bca" checked={employeedetails.course.bca} onChange={handleChange} />
-                    <label htmlFor="bca">BCA</label>
-                  </div>
-
-                  <div>
-                    <input type="checkbox" id="bsc" name="bsc" checked={employeedetails.course.bsc} onChange={handleChange} />
-                    <label htmlFor="bsc">BSc</label>
-                  </div>*/}
-                </div>
-              </form>
+              </div>
             </Col>
           </Row>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="warning" onClick={handleClose1}>
-            Cancel
-          </Button>
-          <Button variant="success" onClick={handleAdd}>
-            Add
-          </Button>
-        </Modal.Footer>
-      </Modal>
+
+          <div className="mb-3">
+            <label htmlFor="course" className="form-label">
+              Course:
+            </label>
+            <input
+              type="text"
+              id="course"
+              placeholder="Enter Course"
+              value={employeedetails.course}
+              className="form-control"
+              onChange={handleChange}
+              name="course"
+            />
+          </div>
+        </Col>
+      </Row>
+    </form>
+  </Modal.Body>
+  <Modal.Footer>
+    <Button variant="secondary" onClick={handleClose1}>
+      Cancel
+    </Button>
+    <Button variant="primary" onClick={handleAdd}>
+      Add Employee
+    </Button>
+  </Modal.Footer>
+</Modal>
     </>
   );
 }
